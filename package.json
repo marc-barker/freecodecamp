@@ -2,11 +2,19 @@
   "name": "freecodecamp",
   "version": "0.0.0",
   "description": "Repo containing solutions for freecodecamp projects.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "Marc Barker",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marc-barker/freecodecamp.git"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
 }
