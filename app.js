@@ -37,6 +37,15 @@ app.get('/api/timestamp/:date_string?', function(req, res) {
     res.json({"unix": date.getTime(), "utc": date.toUTCString()})
 })
 
+// Request Header Parser solution
+app.get('/api/whoami', function(req, res) {
+    res.json({
+        "ipaddress": req.headers.forwarded === undefined ? req.headers.host : req.header.forwarded,
+        "language": req.headers["accept-language"],
+        "software": req.headers["user-agent"]
+    })
+})
+
 const listener = app.listen(process.env.PORT || 3000, function () {
     console.log('Your app is listening on port ' + listener.address().port);
 });
