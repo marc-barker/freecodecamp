@@ -18,6 +18,25 @@ app.get('/timestamp', function(req, res) {
     res.sendFile(__dirname + '/views/timestamp.html')
 })
 
+// Timestamp server solution
+app.get('/api/timestamp/:date_string?', function(req, res) {
+    let date;
+    if (!req.params.date_string) {
+        date = Date.now()
+    } else {
+        let nonDigitRegex = /\D/
+        if (nonDigitRegex.test(req.params.date_string)) {
+            date = new Date(req.params.date_string)
+        } else {
+            date = new Date(Number(req.params.date_string))
+        }
+    }
+    if (date.toUTCString() === 'Invalid Date') {
+        return res.json({"error": "Invalid Date"})
+    }
+    res.json({"unix": date.getTime(), "utc": date.toUTCString()})
+})
+
 const listener = app.listen(process.env.PORT || 3000, function () {
     console.log('Your app is listening on port ' + listener.address().port);
 });
