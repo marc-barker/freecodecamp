@@ -22,7 +22,7 @@ app.get('/timestamp', function(req, res) {
 app.get('/api/timestamp/:date_string?', function(req, res) {
     let date;
     if (!req.params.date_string) {
-        date = Date.now()
+        date = new Date()
     } else {
         let nonDigitRegex = /\D/
         if (nonDigitRegex.test(req.params.date_string)) {
