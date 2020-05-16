@@ -50,6 +50,11 @@ app.get('/api/whoami', function(req, res) {
     })
 })
 
+// URL shortener solution
+app.get('/url-shortener', function(req, res) {
+    res.sendFile(__dirname + '/views/url-shortener.html')
+})
+
 const listener = app.listen(process.env.PORT || 3000, function () {
     console.log('Your app is listening on port ' + listener.address().port);
 });
