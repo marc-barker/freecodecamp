@@ -14,11 +14,11 @@ app.get('/', function(req, res) {
     res.sendFile(__dirname + '/views/index.html')
 })
 
+// Timestamp server solution
 app.get('/timestamp', function(req, res) {
     res.sendFile(__dirname + '/views/timestamp.html')
 })
 
-// Timestamp server solution
 app.get('/api/timestamp/:date_string?', function(req, res) {
     let date;
     if (!req.params.date_string) {
@@ -38,6 +38,10 @@ app.get('/api/timestamp/:date_string?', function(req, res) {
 })
 
 // Request Header Parser solution
+app.get('/headerparser', function(req, res) {
+    res.sendFile(__dirname + '/views/header-parser.html')
+})
+
 app.get('/api/whoami', function(req, res) {
     res.json({
         "ipaddress": req.headers.forwarded === undefined ? req.headers.host : req.header.forwarded,
