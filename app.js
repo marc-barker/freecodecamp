@@ -14,6 +14,10 @@ app.get('/', function(req, res) {
     res.sendFile(__dirname + '/views/index.html')
 })
 
+app.get('/timestamp', function(req, res) {
+    res.sendFile(__dirname + '/views/timestamp.html')
+})
+
 const listener = app.listen(process.env.PORT || 3000, function () {
     console.log('Your app is listening on port ' + listener.address().port);
 });
