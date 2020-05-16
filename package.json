@@ -2,9 +2,10 @@
   "name": "freecodecamp",
   "version": "0.0.0",
   "description": "Repo containing solutions for freecodecamp projects.",
-  "main": "app.js",
+  "main": "src/app.js",
+  "homepage": "https://marcbarker-freecodecamp.herokuapp.com/",
   "scripts": {
-    "start": "node app.js"
+    "start": "node src/app.js"
   },
   "keywords": [],
   "author": "Marc Barker",
